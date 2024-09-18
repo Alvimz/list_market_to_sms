@@ -1,13 +1,13 @@
 class GetItensTxt:
     def __init__(self) -> None:
         self._itens = list()
+        
     
-    @property
-    def itens(self):
-        return self._itens    
+   
+         
     
-    def get_itens(self):
-        with open('itens_comprar.txt','r',encoding='utf-8') as file:
+    def get_itens(self,arquivo):
+        with open(arquivo,'r',encoding='utf-8') as file:
             
             for line in file:
                 item, qnt = line.strip().split(',')
@@ -20,13 +20,20 @@ class GetItensTxt:
             print(item)
             
         print(10*'-')
-                
+
+    @property
+    def itens(self):
+        return self._itens
+    
+    @itens.setter
+    def itens(self,nomearquivo):
+        self.get_itens(nomearquivo)
             
                 
             
 if __name__ == '__main__':
     a = GetItensTxt()
-    a.get_itens()
+    a.itens='itens_comprar.txt'
     a.show_itens_in_list()
     
    

@@ -1,0 +1,4 @@
+ovos,2
+macarrão,1
+farinha de trigo,4
+óleo de soja, 2
