@@ -1,46 +1,20 @@
 class GetItensTxt:
     def __init__(self) -> None:
-        self._itens = list()
-        
-    
-   
-         
-    
-    def get_itens(self,arquivo):
-        with open(arquivo,'r',encoding='utf-8') as file:
-            
+        self.itens = list()
+
+    def get_itens(self, arquivo):
+        with open(arquivo, 'r', encoding='utf-8') as file:
             for line in file:
                 item, qnt = line.strip().split(',')
-                self._itens.append((f'Item:{item},Qnt:{qnt}'))
-            
-    def show_itens_in_list(self):
-        print(10*'-')
-        for item in self._itens:
-            
-            print(item)
-            
-        print(10*'-')
+                self.itens.append(f'Item:{item},Qnt:{qnt}')
 
-    @property
-    def itens(self):
-        return self._itens
-    
-    @itens.setter
-    def itens(self,nomearquivo):
-        self.get_itens(nomearquivo)
-            
-                
-            
+    def show_itens_in_list(self):
+        print(10 * '-')
+        for item in self.itens:
+            print(item)
+        print(10 * '-')
+
 if __name__ == '__main__':
     a = GetItensTxt()
-    a.itens='itens_comprar.txt'
+    a.get_itens('itens_comprar.txt')  # Carrega os itens diretamente
     a.show_itens_in_list()
-    
-   
-    
-    
-            
-            
-        
-        
-        
