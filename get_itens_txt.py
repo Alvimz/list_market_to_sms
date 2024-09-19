@@ -12,7 +12,7 @@ class GetItensTxt:
         with open(arquivo, "r", encoding="utf-8") as file:
             for line in file:
                 item, qnt = line.title().strip().split(",")
-                self._itens.append((f"item:{item},qnt:{qnt}"))
+                self._itens.append((f"item: {item} ,qnt: {qnt}"))
 
     def show_itens_in_list(self):
         print(10 * "-")
